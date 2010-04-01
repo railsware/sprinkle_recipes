@@ -1,0 +1,41 @@
+h1. Railsware sprinkle recipes
+
+h3. Prerequisites
+
+# Debian or Ubuntu linux server
+# User with sudo rights on the server
+
+h3. Contents
+
+* _deploy.rb_ - settings file for Capistrano. Put your server credentials here.
+* _install.rb_ - Main Sprinkle install script. Modify it for selecting exact packages you want to use.
+* _recipes/comet.rb_ - Comet server of you choice: Juggernaut or Orbited/RabbitMQ
+* _recipes/databases.rb_ -  MySQL or Postgres with appropriate ruby gems
+* _recipes/essentials.rb_ - Build tools required for building linux apps from source
+* _recipes/geoip.rb_ - GeoIP C library and free GeoIP City database
+* _recipes/goodies.rb_ - Different utilities for system administrator like htop, screen, vim, ccze, logrotate, etc
+* _recipes/imagemagick.rb_ - ImageMagick utility
+* _recipes/mailserver.rb_ - Mail server. Not used by default because Ubuntu is already shipped with Exim4
+* _recipes/nginx_passenger_.rb_ - Nginx with Passenger module built from source
+* _recipes/rails.rb_ - Latest stable version of Ruby on Rails
+* _recipes/redis.rb_ - Redis database, recipe is not stable and not recomended to use at this time
+* _recipes/ruby_ee_dep_gems.rb_ - Ruby Enterprise Edition and RubyGems built from source
+* _recipes/scm.rb_ Git or Mercurial
+
+
+h3. Usage
+
+# Install Sprinkle: _sudo gem install sprinkle_
+# Set your server credentials in _deploy.rb_
+# Pick packages you want to install in _install.rb_. Add another packages or modify existing ones.
+# Run _sprinkle -s install.rb_ inside or sprinkle_recipes directory and follow Sprinkle instructions
+
+h3. Drawbacks
+
+By default you're unable to install both Git and Mercurial at a time or both MySQL and PostgreSQL at a time. However you could modify its installation recipes or install this in 2 steps.
+
+h3. Notes
+
+Tested with Ubuntu 8.10 and Ubuntu 9.04
+
+Based on "Passenger Sprinkle stack by benschwarz":http://github.com/benschwarz/passenger-stack
