@@ -1,7 +1,7 @@
 # Package is unstable and may not work properly.
 package :redis do
   description 'Redis Database'
-  version '1.2.1'
+  version '2.0.3'
   s_ource "http://redis.googlecode.com/files/redis-#{version}.tar.gz"  # hack
   
   push_text '', "/tmp/sprinkle-hack" do
