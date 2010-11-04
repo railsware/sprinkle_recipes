@@ -2,6 +2,7 @@ package :nginx, :provides => :webserver do
   description 'Nginx Web Server installed by Passenger'
   requires :passenger
   version = '0.7.65'
+  apt %w( libcurl4-openssl-dev )
 
   flags = '--with-http_ssl_module --with-http_stub_status_module'
 
