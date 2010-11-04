@@ -7,6 +7,7 @@ package :ruby_enterprise do
   binaries = %w(erb gem irb rackup rails rake rdoc ree-version ri ruby testrb)
   source "http://rubyforge.org/frs/download.php/68719/ruby-enterprise-#{version}.tar.gz" do
     custom_install 'sudo ./installer --auto=/usr/local/ruby-enterprise'
+    post :install, "mkdir -p /usr/local/bin"
     binaries.each {|bin| post :install, "ln -s #{REE_PATH}/bin/#{bin} /usr/local/bin/#{bin}" }
   end
   
