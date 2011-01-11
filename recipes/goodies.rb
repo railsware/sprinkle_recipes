@@ -1,7 +1,9 @@
 package :goodies do
   description 'Different useful utilities required on the server'
   #Sysadmin tools
-  apt %w(nmap netdiag htop mc screen vim ne wget sysstat fish zsh ccze pv logrotate rkhunter etckeeper)
+  apt %w(nmap netdiag htop mc screen vim ne wget sysstat fish zsh ccze pv logrotate rkhunter etckeeper) do
+
+  end
 
 
   verify do
